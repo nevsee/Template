@@ -269,6 +269,13 @@
     }
 }
 
+- (XYCycleCell *)cellForItemAtIndex:(NSInteger)index {
+    NSInteger businessIndex = [self obtainBusinessIndex:_actualIndex];
+    NSInteger interval = index - businessIndex;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_actualIndex + interval inSection:0];
+    return (XYCycleCell *)[_collectionView cellForItemAtIndexPath:indexPath];
+}
+
 - (void)configureInitialIndex {
     _previousIndexWhenScrolling = 0;
     
@@ -317,6 +324,10 @@
 
 - (NSInteger)currentIndex {
     return [self obtainBusinessIndex:_actualIndex];
+}
+
+- (XYCycleCell *)currentCell {
+    return [self cellForItemAtIndex:self.currentIndex];
 }
 
 - (void)setDatas:(NSArray *)datas {

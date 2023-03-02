@@ -96,6 +96,10 @@
     [_scrollView registerCellWithReuseIdentifier:identifier];
 }
 
+- (__kindof UIView *)contentViewForIndex:(NSInteger)index {
+    return [_scrollView cellForItemAtIndex:index].renderView;
+}
+
 // Access
 - (void)setScrollStyle:(YYLoopViewScrollStyle)scrollStyle {
     if (_scrollStyle == scrollStyle) return;

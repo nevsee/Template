@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger, YYLoopViewScrollDirection) {
 typedef void (^YYLoopViewWillScrollBlock)(YYLoopView *loopView, NSUInteger index);
 typedef void (^YYLoopViewDidScrollBlock)(YYLoopView *loopView, NSUInteger index);
 typedef void (^YYLoopViewDidSelectItemBlock)(YYLoopView *loopView, NSUInteger index);
-typedef void (^YYLoopViewSetContentAttributeBlock)(YYLoopView *loopView, UIView *contentView, NSUInteger index);
+typedef void (^YYLoopViewSetContentAttributeBlock)(YYLoopView *loopView, __kindof UIView *contentView, NSUInteger index);
 typedef Class<XYCycleDataParser> _Nonnull (^YYLoopViewSetContentClassBlock)(YYLoopView *loopView, NSUInteger index);
 
 /**
@@ -53,6 +53,7 @@ typedef Class<XYCycleDataParser> _Nonnull (^YYLoopViewSetContentClassBlock)(YYLo
 @property (nonatomic, strong, nullable) YYLoopViewDidScrollBlock didScrollBlock;
 @property (nonatomic, strong, nullable) YYLoopViewDidSelectItemBlock didSelectItemBlock;
 - (void)registerCellWithReuseIdentifier:(NSString *)identifier;
+- (__kindof UIView *)contentViewForIndex:(NSInteger)index;
 @end
 
 /**

@@ -34,10 +34,10 @@
         else if (index == 4) return YYTestLoopContentView.class;
         return YYLoopImageContentView.class;
     };
-    loopView.setContentAttributeBlock = ^(YYLoopView *loopView, UIView *contentView, NSUInteger index) {
+    loopView.setContentAttributeBlock = ^(YYLoopView *loopView, __kindof UIView *contentView, NSUInteger index) {
         contentView.layer.cornerRadius = 10;
         if (index == 1) {
-            YYLoopTextContentView *view = (YYLoopTextContentView *)contentView;
+            YYLoopTextContentView *view = contentView;
             view.textLabel.textAlignment = NSTextAlignmentCenter;
             view.backgroundColor = YYNeutral2Color;
         }

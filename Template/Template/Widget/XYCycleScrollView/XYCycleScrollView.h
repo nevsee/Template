@@ -35,6 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign, readonly) BOOL isAnimating;
 @property (nonatomic, assign, readonly) NSInteger currentIndex;
+@property (nonatomic, strong, readonly) XYCycleCell *currentCell;
 
 - (instancetype)initWithFrame:(CGRect)frame
                        layout:(UICollectionViewFlowLayout *)layout;
@@ -50,6 +51,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)scrollToItemAtIndex:(NSUInteger)index animated:(BOOL)animated;
 - (void)scrollToNextItemAnimated:(BOOL)animated;
 - (void)scrollToPreviousItemAnimated:(BOOL)animated;
+
+- (XYCycleCell *)cellForItemAtIndex:(NSInteger)index;
 @end
 
 @protocol XYCycleScrollViewDataSource <NSObject>
@@ -62,7 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)cycleScrollView:(XYCycleScrollView *)cycleScrollView willScrollToIndex:(NSInteger)index;
 - (void)cycleScrollView:(XYCycleScrollView *)cycleScrollView didScrollToIndex:(NSInteger)index;
 - (void)cycleScrollView:(XYCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index;
-- (void)cycleScrollView:(XYCycleScrollView *)cycleScrollView didSetContentView:(UIView *)contentView atIndex:(NSInteger)index;
+- (void)cycleScrollView:(XYCycleScrollView *)cycleScrollView didSetContentView:(__kindof UIView *)contentView atIndex:(NSInteger)index;
 @end
 
 NS_ASSUME_NONNULL_END
