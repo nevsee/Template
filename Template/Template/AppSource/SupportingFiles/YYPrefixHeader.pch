@@ -1,0 +1,66 @@
+//
+//  YYPrefixHeader.pch
+//  Template
+//
+//  Created by nevsee on 2021/11/18.
+//
+
+#ifndef YYPrefixHeader_pch
+#define YYPrefixHeader_pch
+
+// System
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+// Third
+#import <AFNetworking/AFNetworking.h>
+#import <Masonry/Masonry.h>
+#import <FMDB/FMDB.h>
+#import <YYModel/YYModel.h>
+
+#import <SDWebImage/SDWebImage.h>
+#import <MJRefresh/MJRefresh.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
+
+// Widget
+#import "XYCategory.h"
+#import "XYMediator.h"
+#import "XYNetworking.h"
+#import "XYStorage.h"
+#import "XYWeakProxy.h"
+#import "XYCipher.h"
+
+#import "XYConstructor.h"
+#import "XYAlertController.h"
+#import "XYButton.h"
+#import "XYLoadingButton.h"
+#import "XYLabel.h"
+#import "XYTextField.h"
+#import "XYTextView.h"
+#import "XYToastView.h"
+#import "XYEasyCell.h"
+
+// Extender
+#import "YYAppDelegate.h"
+#import "YYAppLauncher.h"
+#import "YYGlobalMacro.h"
+#import "YYGlobalUtility.h"
+#import "YYRequest.h"
+#import "YYMediatorModule.h"
+
+#import "YYAppearance.h"
+#import "YYBaseModel.h"
+#import "YYBaseController.h"
+#import "YYBaseNavigationController.h"
+#import "YYBaseTabBarController.h"
+#import "YYGestureBoard.h"
+#import "YYRefresh.h"
+#import "YYTipView.h"
+#import "YYWebMenuController.h"
+
+// Manager
+#import "YYCacheManager.h"
+#import "YYLocalizedManager.h"
+#import "YYUserManager.h"
+
+#endif /* YYPrefixHeader_pch */
